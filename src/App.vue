@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from "@/view/Home"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Home
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app{
+    height: 100%;
+    background-image: url('~@/assets/img/bg1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media screen and (max-width:760px) {
+    #app{
+      background-image: url('~@/assets/img/bg2.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
 </style>
