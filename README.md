@@ -1,4 +1,5 @@
 # boke
+网站网址:http://www.wezard1991.cn
 
 ## Project setup
 ```
@@ -62,3 +63,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 2.超大尺寸显示器未兼容
 3.ios下，侧拉栏显示不全(已解决)
 4.把el-main的隐藏滑动条所在的容器设回calc()模式，微调居中样式，减少css代码
+
