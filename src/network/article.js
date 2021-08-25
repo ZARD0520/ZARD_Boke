@@ -33,3 +33,15 @@ export function comment(id,obj){
         }
     })
 }
+
+export function write(title,introduce,text){
+    return request({
+        method:"post",
+        url:'/articleAdd',
+        data:{
+            title,
+            introduce,
+            text
+        }
+    })
+}

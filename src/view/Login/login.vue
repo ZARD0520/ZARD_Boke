@@ -11,10 +11,6 @@ export default {
 </script>
 
 <style scoped>
-    #id{
-        height: 100%;
-        background-color: #000;
-    }
     *{
         height: 100vh;
     }

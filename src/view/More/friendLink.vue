@@ -45,11 +45,7 @@ export default {
         margin-top:8px;
         color: rgb(101, 101, 102);
     }
-    .friendList{/*
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;*/
-
+    .friendList{
         width: 100%;
         margin-top:14px;
         margin-left:20px;

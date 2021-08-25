@@ -5,7 +5,7 @@
                 <img src="@/assets/icon/book.svg" alt="" class="title_icon">
                 <p>文章</p>
             </div>
-        <article-content v-for="(item,index) in this.List.list.slice((this.List.currentPage-1)*this.List.pageSize,this.List.currentPage*this.List.pageSize)"
+        <article-content v-for="(item,index) in getList"
                             :list="item" :key="index"/>
         </div>
         <el-pagination
@@ -36,6 +36,11 @@ export default {
     components:{
         MainContainer,
         ArticleContent
+    },
+    computed:{
+        getList(){
+            return this.List.list.slice((this.List.currentPage-1)*this.List.pageSize,this.List.currentPage*this.List.pageSize)
+        }
     },
     updated(){
         this.$store.commit('scrollTop')

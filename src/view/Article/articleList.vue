@@ -22,7 +22,7 @@ export default {
     },
     created(){
         getArticleList().then(res=>{
-            this.List.list = res.data.data
+            this.List.list = res.data.data.reverse()
         })
     },
     components:{

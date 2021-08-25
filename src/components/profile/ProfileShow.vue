@@ -78,6 +78,7 @@ export default {
             this.$store.commit('changeLogin',false)
             sessionStorage.clear()
             this.$router.replace('ProfileWait')
+            location.reload()
         },
         editImg(){
             alert('头像不可更改，功能暂未开放')

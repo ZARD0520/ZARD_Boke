@@ -15,6 +15,9 @@
         <div class="more">
             <a href="javascript:;" @click="showMore">更多功能</a>
         </div>
+        <div class="more-write">
+            <a href="javascript:;" @click="writeArticle" v-show="isUp">写文章</a>
+        </div>
     </el-menu>
 </template>
 
@@ -39,9 +42,11 @@ export default {
             src1:require("@/assets/icon/menu-icon/right.svg"),
             src2:require("@/assets/icon/menu-icon/down.svg"),
             userImg:'http://47.112.128.68/server/public/staticImg/Moon2.jpg',
-            currentIndex:0,
-            isDialog:true
+            isUp:false
         }
+    },
+    created(){
+        this.checkIsUp()
     },
     methods:{
         showMore(){
@@ -49,6 +54,19 @@ export default {
         },
         manager(){
             alert('达咩~ 此功能未开放')
+        },
+        checkIsUp(){
+            var user = sessionStorage.getItem('user')
+            var token = sessionStorage.getItem('token')
+            if(user==='wezard'&&token){
+                this.isUp = true
+            }else{
+                this.isUp = false
+            }
+        },
+        writeArticle(){
+            this.$store.commit('closeAside')
+            this.$router.replace('/admin')
         }
     }
 }
@@ -62,9 +80,6 @@ export default {
         padding-right:20px;
         overflow-x: hidden;
         overflow-y: scroll;
-    }
-    .menu:hover{
-        
     }
     .menu-items:hover{
         color: rgb(0, 100, 95);
@@ -102,13 +117,23 @@ export default {
         font-size: 16px;
     }
     .more>a{
-        display: inline-block;
+        display: block;
+        margin-top:10px;
+        margin-bottom:20px;
+        margin-left:20px;
+    }
+    .more-write{
+        border-top:1px solid rgb(192, 192, 192);
+        width: 80%;
+    }
+    .more-write>a{
+        display: block;
         margin-top:10px;
         margin-left:20px;
-        color:rgb(68, 68, 68);
     }
-    .el-dialog{
-        z-index: 9999;
+
+    a{
+        color:rgb(68, 68, 68);
     }
 
     @keyframes rotate {
@@ -126,6 +151,9 @@ export default {
         }
         .more{
             display: block;
+        }
+        .more-write{
+            border:0px;
         }
     }
 

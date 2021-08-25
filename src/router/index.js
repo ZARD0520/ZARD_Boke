@@ -27,6 +27,8 @@ const Register = ()=>import('@/components/login/Register')
 
 const friendLink = ()=>import('@/view/More/friendLink')
 
+const adminArticle = ()=>import('@/view/Admin/adminArticle')
+
 
 Vue.use(VueRouter)
 
@@ -171,6 +173,11 @@ const routes = [
                 component:Register
             }
         ]
+    },
+    //管理文章路由
+    {
+        path:'/admin',
+        component:adminArticle
     }
 ]
 
